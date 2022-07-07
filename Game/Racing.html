@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0;
+            font-family: "VT323";
+            overflow: hidden;
+            background-color: black;
+        }
+        button{
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        canvas{
+            margin: 0 0 0 150px ;
+            pointer-events: none;
+        }
+        .restart{
+            display:none;
+        }
+
+        .mini-menu{
+            display:none;
+        }
+        .open{
+            user-select: none;
+            display: flex;
+            color:red;
+            border: 4px solid red;
+            z-index: 100000;
+            position: relative;
+            top:-200px;
+            left:607px;
+            font-size: 40px;
+            font-family: "VT323";
+            background-color: transparent;
+            cursor: pointer;
+        }
+        .open1{
+            user-select: none;
+            display: flex;
+            color:red;
+            z-index: 100000;
+            position: relative;
+            top:-150px;
+            left:620px;
+            font-size: 40px;
+            font-family: "VT323";
+            background-color: transparent;
+            cursor: pointer;
+        }
+        .main-menu{
+            height: 586px;
+            width: 1024px;
+            position: relative;
+            top: -586px;
+            left: 150px;
+            background-image: url("original.gif");
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            margin: 0;
+        }
+        .close{
+            display: none;
+        }
+        .start{
+            user-select: none;
+            margin-top: 180px;
+            margin-bottom: 50px;
+            font-family: "VT323";
+            font-size: 50px; 
+            padding: 0 20px;
+            transition: all .2s ease-in-out;  
+            background-color: deeppink; 
+        }
+        .settings{
+            user-select: none;
+            font-family: "VT323";
+            font-size: 50px;
+            margin-bottom: 50px;
+            transition: all .2s ease-in-out;
+            background-color: deeppink;
+        }
+        .autors{
+            user-select: none;
+            font-family: "VT323";
+            font-size: 50px;
+            transition: all .2s ease-in-out;
+            background-color: deeppink;
+        }
+        .menu{
+            user-select: none;
+            position: relative;
+            top: -130px;
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+            width: 300px;
+            margin-left: 30px;
+            align-items: center;
+        }
+
+        .start:hover{
+            transform: scale(1.8);
+            background-color: transparent;
+            color: deeppink;
+        }
+        .start:active{
+            transform: scale(1.8) translateX(40px);
+            background-color: transparent;
+            color: deeppink;
+        }
+        .settings:hover{
+            transform: scale(1.8);
+            background-color: transparent;
+            color: deeppink;
+        }       
+         .settings:active{
+            transform: scale(1.8) translateX(40px);
+            background-color: transparent;
+            color: deeppink;
+        }
+        .autors:hover{
+            transform: scale(1.8);
+            background-color: transparent;
+            color: deeppink;
+        }
+        .autors:active{
+            transform: scale(1.8)  translateX(40px);
+            background-color: transparent;
+            color: deeppink;
+        }
+        .h1{
+            font-size: 120px;
+            margin: 0;
+            padding: 0;
+            margin-left: 190px;
+            margin-top: 50px;
+            pointer-events: none;
+            user-select: none;
+        }
+        .h2{
+            font-size: 50px;
+            margin: 0;
+            padding: 0;
+            margin-left: 210px;
+            pointer-events: none;
+            user-select: none;
+        }
+        .control{
+            position: relative;
+            top: -1150px;
+            color: white;
+            left: 20px;
+            width: 120px;
+            pointer-events: none;
+        }
+        .rules{
+            position: relative;
+            top: -1100px;
+            color: white;
+            left: 20px;
+            width: 120px;
+            z-index: -10;
+            pointer-events: none;
+        }
+    </style>
+    </head>
+    
+</head>
+<body>
+    <canvas>
+    </canvas>
+    <div class="main-menu">
+        <audio id="player" src="bensound-moose.mp3" loop></audio>
+        <h1 class="h1"><i>NO LIMITS</i></h1>
+        <h2 class="h2"><i>Raceway</i></h2>
+        <div class="menu">
+        <button class="start" defer onmouseenter="document.getElementById('sound').play()"  onclick="document.getElementById('player').play()">START</button>
+        <button class="settings " onmouseenter="document.getElementById('sound').play()" >setting</button>
+        <button class="autors" onmouseenter="document.getElementById('sound').play()" >autors</button>
+        </div>
+    </div>
+    <button class="restart">START
+    </button>
+    <button class="mini-menu" onclick="document.getElementById('player').pause()">Menu
+    </button>
+    <audio id="sound" src="zvuk41.mp3" preload></audio>
+    <div class="control">control:
+    <p>"A"-move left</p>
+    <p>"D"-move right</p></div>
+    <div class="rules">rules:
+        <p >Manage the car, avoiding accidents with others. Each accident takes one life, as soon as you have one life left, one extra life will randomly appear in the game, take a chance and catch it!</p></div>
+    
+
+
+<script src="space.js"></script>
+
+</body>
+</html>

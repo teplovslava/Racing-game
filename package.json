@@ -1,0 +1,16 @@
+{
+  "name": "racing-game-gh-pages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "space.js",
+  "homepage": "https://teplovslava.github.io/Racing-game",
+  "scripts": {
+    "deploy":"gh-pages -d Game"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}
